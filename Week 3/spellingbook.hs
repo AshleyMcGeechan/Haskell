@@ -1,6 +1,9 @@
-wordlist = ["Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", 
-    "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"]
+import Data.Char
+import Data.List
+
+helper w
+  | w == [] = ""
+  | otherwise = (head w) : " is for " ++ w
 
 speller :: [[Char]] -> [Char]
-speller wordlist =
-    
+speller x = ((intercalate ", ") . map helper) x
